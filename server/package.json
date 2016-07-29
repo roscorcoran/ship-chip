@@ -1,0 +1,15 @@
+{
+  "name": "shipio",
+  "version": "1.0.0",
+  "description": "Ships IO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chip-io": "^2.0.0",
+    "johnny-five": "^0.9.61"
+  }
+}
