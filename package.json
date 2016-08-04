@@ -1,15 +1,22 @@
 {
   "name": "shipio",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Ships IO",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chip-io": "^2.0.0",
+    "eslint": "^3.2.2",
+    "eslint-config-ember": "^0.3.0",
+    "eslint-plugin-ember": "^1.1.0",
     "johnny-five": "^0.9.61"
+  },
+  "engines": {
+    "node": ">=4.3"
   }
 }
