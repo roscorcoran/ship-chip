@@ -1,0 +1,8 @@
+<h4>New ship</h4>
+<form class="pure-form pure-form-aligned">
+  <fieldset class="pure-group">
+    {{input class="pure-input-1" id="name" value=name placeholder="Name"}}
+    {{textarea class="pure-input-1" id="description" value=description placeholder="Description"}}
+  </fieldset>
+  <button type="submit" class="pure-button pure-input-1 pure-button-primary" {{action "createShip"}}>Create</button>
+</form>
