@@ -1,21 +1,26 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'client',
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: '',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    firebase: {
+      apiKey: "AIzaSyDrjTwTt-_KXK8XGZCGy0y_1Ou_NBYmrq0",
+      authDomain: "ship-582de.firebaseapp.com",
+      databaseURL: "https://ship-582de.firebaseio.com",
+      storageBucket: "ship-582de.appspot.com"
     }
   };
 
