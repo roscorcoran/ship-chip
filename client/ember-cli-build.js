@@ -14,6 +14,8 @@ module.exports = function(defaults) {
   });
 
   app.import(app.bowerDirectory + '/pure/pure.css');
+  app.import(app.bowerDirectory + '/pure/grids-responsive.css');
+
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
