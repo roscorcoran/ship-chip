@@ -10,12 +10,12 @@
   <tbody>
     {{#each model as |ship|}}
       <tr>
-        <th>{{ship.name}}</th>
-        <th>{{ship.description}}</th>
-        <th>
+        <td>{{ship.name}}</td>
+        <td>{{ship.description}}</td>
+        <td>
           <button {{action "destroyShip" ship}}>Destroy!</button>
           {{#link-to 'ship.edit' ship tagName='button'}}Edit{{/link-to}}
-        </th>
+        </td>
       </tr>
     {{/each}}
   </tbody>
