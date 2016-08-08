@@ -14,6 +14,7 @@
         <th>{{ship.description}}</th>
         <th>
           <button {{action "destroyShip" ship}}>Destroy!</button>
+          {{#link-to 'ship.edit' ship tagName='button'}}Edit{{/link-to}}
         </th>
       </tr>
     {{/each}}
