@@ -1,44 +1,86 @@
-var firebase = require("firebase");
+var firebase = require('firebase');
 var fs = require('fs');
 
-var Config = require('./shipConfig.js');
-
+//Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyDrjTwTt-_KXK8XGZCGy0y_1Ou_NBYmrq0",
-  authDomain: "ship-582de.firebaseapp.com",
-  databaseURL: "https://ship-582de.firebaseio.com",
-  storageBucket: "ship-582de.appspot.com"
+  apiKey: 'AIzaSyDrjTwTt-_KXK8XGZCGy0y_1Ou_NBYmrq0',
+  authDomain: 'ship-582de.firebaseapp.com',
+  databaseURL: 'https://ship-582de.firebaseio.com',
+  storageBucket: 'ship-582de.appspot.com'
 };
 
 firebase.initializeApp({
-  serviceAccount: "run/ship.json",
+  serviceAccount: 'run/ship.json',
   databaseURL: firebaseConfig.databaseURL
 });
 
-var configFile = './run/config.json';
-
 var db = firebase.database();
-var ships = db.ref("ships");
+var ships = db.ref('ships');
+
+//Local configuration
+var configFile = './run/config.json';
+var Config = require('./shipConfig.js');
 
 //Use the config module to get a current or generate a new config.
 var config = new Config(configFile, ships);
 
+var IO_HANDLERS = {
+  setStatusLed: function (status) {
+    console.log('StatusLed', status);
+  },
+  setPin: function (status, pin) {
+    console.log('Pin: ', pin, ' Status: ', status);
+  }
+};
+
 //Once we have our configuration loaded from the server we can run all defined IO event handlers
-config.once('loaded', (config) => {
+config.once('loaded', (id) => {
   //Get a reference to this ships model
-  var shipRef = ships.child(config.key);
+  var shipRef = ships.child(id);
 
   //An event handler for this specific Ship
-  shipRef.on("child_changed", function (snapshot) {
-    var newValue = snapshot.val();
-    console.log(snapshot.key + ' changed to: ', newValue);
+  //shipRef.on('child_changed', function (snapshot) {
+  //  var newValue = snapshot.val();
+  //  console.log(snapshot.key + ' changed to: ', newValue);
+  //});
+
+  //Setup event handlers for all soft IO events
+  //If a buttons value changes, all attached handlers are fired with the new value
+  var softButtons = shipRef.child('softIO/buttons');
+
+  softButtons.once('value', function handleSoftButtonChanges(snapshot){
+    var newButtons = snapshot.val();
+    for (var button in newButtons) {
+      if (newButtons.hasOwnProperty(button)) {
+        softButtons.child(button).on('value', updateHandlers);
+      }
+    }
   });
 
-  //Event handler for this Ships soft-io changes.
-  var IORef = shipRef.child('softIo');
-  IORef.on("child_changed", function (snapshot) {
-    var newValue = snapshot.val();
-    console.log("Changed IO", newValue);
-  });
 
 });
+
+function isFunction(o){
+  return Object.prototype.toString.call(o) === '[object Function]';
+}
+
+function isArray(o){
+  return Object.prototype.toString.call(o) === '[object Array]';
+}
+
+function getIOHandler(name){
+  return IO_HANDLERS[name];
+}
+
+function updateHandlers(snapshot) {
+  var newButton = snapshot.val();
+  if(isArray(newButton.handlers)){
+    newButton.handlers.forEach(function (handlerObj) {
+      var handler = getIOHandler(handlerObj.action);
+      if(isFunction(handler)){
+        //Execute the handler in a new scope with the given arguments
+        handler.apply({}, [newButton.value].concat(handlerObj.args || []));
+      }
+    });
+  }
+}
