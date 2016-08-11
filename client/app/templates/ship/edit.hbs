@@ -5,4 +5,8 @@
     {{textarea class="pure-input-1" id="description" value=model.description placeholder="Description"}}
   </fieldset>
   <button type="submit" class="pure-button pure-input-1 pure-button-primary" {{action "updateShip" model}}>Update</button>
+  <h2>Soft IO</h2>
+  <pre>{{json model.softIO}}</pre>
+  <h2>Network Info</h2>
+  <pre>{{json model.net}}</pre>
 </form>

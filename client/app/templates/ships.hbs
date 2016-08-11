@@ -1,0 +1,22 @@
+<h4>Fleet</h4>
+<table class="pure-table pure-table-bordered">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each model as |ship|}}
+    <tr>
+      <td>{{ship.name}}</td>
+      <td>{{ship.description}}</td>
+      <td>
+        <button {{action "destroyShip" ship}}>Destroy!</button>
+        {{#link-to 'ship.edit' ship tagName='button'}}Edit{{/link-to}}
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
