@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('edit', { path: "/edit/:id" });
   });
   this.route('ships');
+  this.route('login');
 });
 
 export default Router;

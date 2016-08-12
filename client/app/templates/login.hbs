@@ -1,0 +1,8 @@
+<h4>Sign In</h4>
+<form class="pure-form">
+  <fieldset class="pure-group">
+    {{input class="pure-input-1" id="email" type="email" value=email placeholder="Email" required=true}}
+    {{input class="pure-input-1" id="password" type="password" value=password placeholder="Password" required=true}}
+  </fieldset>
+  <button class="pure-button pure-input-1 pure-button-primary" {{action "signIn" email password}}>Sign in</button>
+</form>

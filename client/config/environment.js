@@ -21,6 +21,9 @@ module.exports = function (environment) {
       authDomain: "ship-582de.firebaseapp.com",
       databaseURL: "https://ship-582de.firebaseio.com",
       storageBucket: "ship-582de.appspot.com"
+    },
+    torii: {
+      sessionServiceName: 'session'
     }
   };
 
