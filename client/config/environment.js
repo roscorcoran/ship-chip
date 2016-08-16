@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   var ENV = {
-    modulePrefix: 'client',
+    modulePrefix: 'ship-chip-client',
     environment: environment,
     rootURL: '',
     locationType: 'hash',
