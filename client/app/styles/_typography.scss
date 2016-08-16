@@ -1,0 +1,24 @@
+//==== Typography
+
+//== Variables
+$font-family-sans-serif: "Open Sans";
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 14px;
+
+// ~18px
+$font-size-large: ceil(($font-size-base * 1.25));
+// ~12px
+$font-size-small: ceil(($font-size-base * 0.85));
+// ~36px
+$font-size-h1: floor(($font-size-base * 2.6));
+// ~30px
+$font-size-h2: floor(($font-size-base * 2.15));
+// ~24px
+$font-size-h3: ceil(($font-size-base * 1.7));
+// ~18px
+$font-size-h4: ceil(($font-size-base * 1.25));
+//
+$font-size-h5: $font-size-base;
+// ~12px
+$font-size-h6: ceil(($font-size-base * 0.85));

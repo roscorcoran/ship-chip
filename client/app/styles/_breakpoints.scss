@@ -1,0 +1,28 @@
+//== Media queries breakpoints
+//
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+
+$screen-md-max: $screen-md-min - 1px;
+$screen-lg-max: $screen-lg-min - 1px;
+
+$screen-max: 1024px;
+$screen-min: 320px;
+
+@mixin mobile() {
+  @media screen and (max-width: $screen-md-max) {
+    @content
+  }
+}
+
+@mixin tablet() {
+  @media screen and (min-width: $screen-md-min) {
+    @content
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: $screen-lg-min) {
+    @content
+  }
+}
