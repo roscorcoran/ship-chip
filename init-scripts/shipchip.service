@@ -1,0 +1,15 @@
+Description=Ship Chip
+
+[Service]
+ExecStart=/bin/bash /opt/ship-chip/init-scripts/setSail.sh
+Restart=always
+RestartSec=60                       # Restart service after x seconds if node service crashes
+StandardOutput=syslog               # Output to syslog
+StandardError=syslog                # Output to syslog
+SyslogIdentifier=shipchip
+#User=chip
+#Group=chip
+Environment=
+
+[Install]
+WantedBy=multi-user.targe
