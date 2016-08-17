@@ -9,9 +9,9 @@ REMOTE=$(/usr/bin/git rev-parse @{u});
 #if our local revision id doesn't match the remote, we will need to pull the changes
 if [ $LOCAL != $REMOTE ]; then
     #stop the service before making changes
-    systemctl stop shipchip.service;
+    /bin/systemctl stop shipchip.service;
     #pull and merge changes
-    git pull origin master;
+    /usr/bin/git pull origin master;
     #start the service reflecting new changes
-    systemctl start shipchip.service;
+    /bin/systemctl start shipchip.service;
 fi
