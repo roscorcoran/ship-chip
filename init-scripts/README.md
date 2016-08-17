@@ -9,3 +9,7 @@ cp systemctl.service /etc/systemd/system/
 systemctl enable shipchip.service
 systemctl start shipchip.service
 ```
+
+```cron
+*/15 * * * * /opt/ship-chip/init-scripts/pollGit.sh
+```
