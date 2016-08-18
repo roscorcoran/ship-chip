@@ -15,7 +15,8 @@
     "eslint-config-ember": "^0.3.0",
     "eslint-plugin-ember": "^1.1.0",
     "firebase": "^3.2.1",
-    "johnny-five": "^0.9.61"
+    "johnny-five": "^0.9.61",
+    "q": "^1.4.1"
   },
   "engines": {
     "node": ">=4.3"

@@ -1,5 +1,5 @@
 var five = require('johnny-five');
-var chipio = require('chip-io'); // or require('chip-io');
+var chipio = require('chip-io');
 
 var board = new five.Board({
   io: new chipio()
