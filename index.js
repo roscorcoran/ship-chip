@@ -96,7 +96,7 @@ config.once('loaded', (id) => {
 });
 
 q.all([deferredConfig.promise, deferredChipBoard.promise]).then(function(){
-  console.log(arguments);
+  //console.log(arguments);
 });
 
 function isFunction(o){
