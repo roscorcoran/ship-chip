@@ -44,6 +44,7 @@ var io;
 var IO_HANDLERS = {
   setStatusLed: function (status) {
     console.log('StatusLed', status);
+    io.statusLed.stop();
     if(status){
       io.statusLed.on();
     } else {
