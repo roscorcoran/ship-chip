@@ -7,6 +7,8 @@ var q = require('q');
 
 //Johny five & chip
 var board = new five.Board({
+  //When running Johnny-Five programs as a sub-process (eg. init.d, or npm scripts), be sure to shut the REPL off!
+  repl: false,
   io: new chipio()
 });
 
