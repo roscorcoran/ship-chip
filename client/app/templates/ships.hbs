@@ -13,8 +13,8 @@
       <td>{{ship.name}}</td>
       <td>{{ship.description}}</td>
       <td>
-        <button {{action "destroyShip" ship}}>Destroy!</button>
-        {{#link-to 'ship.edit' ship tagName='button'}}Edit{{/link-to}}
+        {{#link-to 'ship.edit' ship tagName='button' class="button-small button-secondary pure-button"}}Edit{{/link-to}}
+        <button {{action "destroyShip" ship}} class="button-small button-error pure-button">Destroy!</button>
       </td>
     </tr>
   {{/each}}

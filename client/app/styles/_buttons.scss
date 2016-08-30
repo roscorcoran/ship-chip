@@ -1,0 +1,43 @@
+@import 'colours';
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: $cool-grey1;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: $color2;
+}
+
+.button-error {
+  background: $red-watermelon;
+}
+
+.button-warning {
+  background: $yellow-pumpkin;
+}
+
+.button-secondary {
+  background: $color4;
+}
+
+
+.button-xsmall {
+  font-size: 70%;
+}
+
+.button-small {
+  font-size: 85%;
+}
+
+.button-large {
+  font-size: 110%;
+}
+
+.button-xlarge {
+  font-size: 125%;
+}

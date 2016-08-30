@@ -1,6 +1,7 @@
 @import 'colours';
 @import 'typography';
 @import 'breakpoints';
+@import 'buttons';
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
   font-family: $font-family-base, sans-serif, serif

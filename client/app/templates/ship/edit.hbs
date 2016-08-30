@@ -4,9 +4,19 @@
     {{input class="pure-input-1" id="name" value=model.name placeholder="Name"}}
     {{textarea class="pure-input-1" id="description" value=model.description placeholder="Description"}}
   </fieldset>
-  <button type="submit" class="pure-button pure-input-1 pure-button-primary" {{action "updateShip" model}}>Update</button>
+
   <h2>Soft IO</h2>
+
+  {{#each-in model.softIO.buttons as |k b|}}
+    <button  {{action "toggleButton" model b}} class="button-small {{if b.value 'button-success' 'button-secondary'}} pure-button">{{b.name}}</button>
+  {{else}}
+    No buttons defined - yet!
+  {{/each-in}}
+
   <pre>{{json model.softIO}}</pre>
+
   <h2>Network Info</h2>
   <pre>{{json model.net}}</pre>
+  <button type="submit" class="button-success pure-button pure-input-1" {{action "updateShip" model}}>Update</button>
+
 </form>
