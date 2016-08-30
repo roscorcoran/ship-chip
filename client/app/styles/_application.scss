@@ -1,0 +1,60 @@
+.pure-menu{
+  background: $color3;
+  color: $cool-grey1;
+  .pure-menu-link{
+    color: $cool-grey1;
+  }
+}
+
+/* misc default styling */
+
+.pure-menu-separator {
+  background-color: #ccc;
+  height: 1px;
+  margin: .3em 0;
+}
+
+.pure-menu-horizontal .pure-menu-separator {
+  width: 1px;
+  height: 1.3em;
+  margin: 0 .3em ;
+}
+
+.pure-menu-heading {
+  text-transform: uppercase;
+  color: $cool-grey2;
+}
+
+.pure-menu-link {
+  color: $cool-grey1;
+}
+
+.pure-menu-children {
+  background: lighten($color3, 5%);
+}
+
+.pure-menu-link,
+.pure-menu-disabled,
+.pure-menu-heading {
+  padding: .5em 1em;
+}
+
+.pure-menu-disabled {
+  opacity: .5;
+}
+
+.pure-menu-disabled .pure-menu-link:hover {
+  background-color: transparent;
+}
+
+.pure-menu-active > .pure-menu-link,
+.pure-menu-link:hover,
+.pure-menu-link:focus {
+  background-color: lighten($color3, 5%);
+}
+
+.pure-menu-selected .pure-menu-link,
+.pure-menu-selected .pure-menu-link:visited {
+  color: #000;
+}
+
