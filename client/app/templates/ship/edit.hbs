@@ -6,13 +6,6 @@
   </fieldset>
 
   <h2>Soft IO</h2>
-
-  {{#each-in model.softIO.buttons as |k b|}}
-    <button  {{action "toggleButton" model b}} class="button-small {{if b.value 'button-success' 'button-secondary'}} pure-button">{{b.name}}</button>
-  {{else}}
-    No buttons defined - yet!
-  {{/each-in}}
-
   <pre>{{json model.softIO}}</pre>
 
   <h2>Network Info</h2>

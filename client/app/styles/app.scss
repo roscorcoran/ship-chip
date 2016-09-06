@@ -8,19 +8,23 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 }
 
 body{
-  background: $cool-grey2;
+  background: $color1;
 }
 
 .sc {
   font-family: $font-family-base;
   font-size: $font-size-base;
-  color: $cool-grey10;
-  background: $cool-grey1;
+  font-weight: 200;
+  color: $color2;
+  background: $color1;
   min-width: $screen-min;
   max-width: $screen-max;
   margin: 0 auto;
   padding: 10px;
   @import 'application';
+  @import 'menu';
+  @import 'tables';
+  @import 'forms';
   @import 'ships';
 }
 

@@ -1,8 +1,11 @@
 //==== Typography
+@import 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:300,400';
+@import 'colours';
 
 //== Variables
-$font-family-sans-serif: Verdana, Geneva, sans-serif;
-$font-family-base: $font-family-sans-serif;
+$font-family-sans-serif: 'Roboto', "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+$font-family-mono: 'Roboto Mono', "Lucida Console", Monaco, monospace;
+$font-family-base: $font-family-mono;
 
 $font-size-base: 14px;
 

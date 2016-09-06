@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('ship', function() {
     this.route('new');
     this.route('edit', { path: "/edit/:id" });
+    this.route('manage', { path: "/manage/:id" });
   });
   this.route('ships');
   this.route('login');

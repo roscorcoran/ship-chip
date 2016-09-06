@@ -1,0 +1,93 @@
+@import "colours";
+
+$menu-color: $color2;
+.pure-menu {
+  background: rgba($menu-color, 0.1);
+  border: 1px solid $menu-color;
+  color: $cool-grey1;
+  .pure-menu-link {
+    color: lighten($menu-color, 5%);
+  }
+}
+
+/* misc default styling */
+
+.pure-menu-separator {
+  background-color: #ccc;
+  height: 1px;
+  margin: .3em 0;
+}
+
+.pure-menu-horizontal .pure-menu-separator {
+  width: 1px;
+  height: 1.3em;
+  margin: 0 .3em;
+}
+
+.pure-menu-heading {
+  text-transform: uppercase;
+  color: $cool-grey2;
+}
+
+.pure-menu-link {
+  color: $cool-grey1;
+}
+
+.pure-menu-children {
+  background: lighten($menu-color, 5%);
+}
+
+.pure-menu-link,
+.pure-menu-disabled,
+.pure-menu-heading {
+  padding: .5em 1.5em;
+  &::before, &::after {
+    transition: all 500ms ease-out;
+    content: " ";
+    position: absolute;
+    top: 0.8em;
+    background-color: lighten($menu-color, 10%);
+    height: 0.8em;
+    width: 1px;
+    transform: skew(-15deg);
+    opacity: 0;
+  }
+  &::before {
+    left: 0.4em;
+  }
+  &::after {
+    right: 0.4em;
+  }
+}
+
+.pure-menu-disabled {
+  opacity: .5;
+}
+
+.pure-menu-disabled .pure-menu-link:hover {
+  background-color: transparent;
+}
+
+.pure-menu-active > .pure-menu-link,
+.pure-menu-link:hover,
+.pure-menu-link:focus,
+.pure-menu-link.active, {
+  position: relative;
+  background-color: transparent;
+  &::before, &::after {
+    transform: skew(-25deg);
+    opacity: 1;
+  }
+  &::before {
+    left: 0.9em;
+
+  }
+  &::after {
+    right: 0.9em;
+  }
+}
+
+.pure-menu-selected .pure-menu-link,
+.pure-menu-selected .pure-menu-link:visited {
+  color: #000;
+}
