@@ -3,6 +3,8 @@
 module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'ship-chip-client',
+    //The pod structure is the best
+    podModulePrefix: 'ship-chip-client/pods',
     environment: environment,
     rootURL: '',
     locationType: 'hash',
@@ -25,6 +27,11 @@ module.exports = function (environment) {
     torii: {
       sessionServiceName: 'session'
     }
+  };
+
+  /*https://github.com/ebryn/ember-component-css*/
+  ENV['ember-component-css'] = {
+    namespacing: false
   };
 
   if (environment === 'development') {

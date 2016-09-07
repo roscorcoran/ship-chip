@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     destroyShip: function (ship) {
       //Calls deleteRecord() and save()
       //ship.destroyRecord();
+      ship.dontDestroyRecord();
     }
   }
 });

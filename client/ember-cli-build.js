@@ -13,8 +13,11 @@ module.exports = function(defaults) {
     }
   });
 
+  //CSS
   app.import(app.bowerDirectory + '/pure/pure.css');
   app.import(app.bowerDirectory + '/pure/grids-responsive.css');
+
+  //JS
 
 
   // Use `app.import` to add additional libraries to the generated

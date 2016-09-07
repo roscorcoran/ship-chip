@@ -14,6 +14,7 @@ Router.map(function() {
   });
   this.route('ships');
   this.route('login');
+  this.route('ship-deck');
 });
 
 export default Router;
