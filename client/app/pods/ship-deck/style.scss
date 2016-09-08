@@ -1,36 +1,63 @@
 @import 'colours';
 
 .ship-deck {
-  border: 1px solid $color2;
-  height: 300px;
+  border: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 
-  svg {
-    background-color: white;
-
+  .workspace {
+    background-color: $color1;
     width: 100%;
-    height: 300px;
+    height: 100%;
 
-    .dot circle {
-      fill: rgba($color2, 0.6);
-      stroke: $color1;
+    .boundary {
+      fill: none;
+      stroke: $color2;
       stroke-width: 1px;
     }
 
+    .dot circle {
+      fill: rgba($color2, 0.5);
+      stroke: $color1;
+      stroke-width: 1px;
+      cursor: pointer;
+    }
+
     .dot circle.dragging {
-      fill: rgba($color3, 0.6);
+      fill: rgba($color3, 0.5);
     }
 
     .axis line {
       fill: none;
-      stroke: #ddd;
+      stroke: lighten($color1, 10%);
       stroke-width: 1px;
       shape-rendering: crispEdges;
       vector-effect: non-scaling-stroke;
     }
 
     .axis line:nth-child(4n+0) {
-      stroke: #ccc;
-      stroke-width: 2px;
+      stroke: lighten($color1, 18%);
+    }
+
+    .axis line:nth-child(16n+0) {
+      stroke: lighten($color1, 25%);
+    }
+
+    .axis line:nth-child(32n+0) {
+      stroke: lighten($color1, 35%);
+    }
+
+    &.modifier{
+      .dot circle {
+        fill: rgba($color2, 0.5);
+        stroke: $color1;
+        stroke-width: 1px;
+        cursor: crosshair;
+      }
     }
   }
 
