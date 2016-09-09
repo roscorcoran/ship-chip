@@ -21,14 +21,19 @@
     }
 
     .dot circle {
-      fill: rgba($color2, 0.5);
+      fill: rgba($color2, 0.3);
       stroke: $color1;
       stroke-width: 1px;
       cursor: pointer;
+      filter: url(#dropshadow);
+      &.pressed{
+        fill: rgba($color3, 0.3);
+      }
+
     }
 
     .dot circle.dragging {
-      fill: rgba($color3, 0.5);
+      fill: rgba($color4, 0.5);
     }
 
     .axis line {
@@ -51,14 +56,14 @@
       stroke: lighten($color1, 35%);
     }
 
-    &.modifier{
+  }
+
+  &.modifier{
+    .workspace{
       .dot circle {
-        fill: rgba($color2, 0.5);
-        stroke: $color1;
-        stroke-width: 1px;
+        fill: rgba($color2, 0.2);
         cursor: crosshair;
       }
     }
   }
-
 }
