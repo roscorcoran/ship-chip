@@ -34,7 +34,6 @@ export default Ember.Component.extend({
     this.$().removeClass('modifier');
   },
   updateButton: function (k, v) {
-    console.log(k, v);
     var button = this.get('buttons.' + k);
     button.value = v.value;
     button.ui.x = v.ui.x;
