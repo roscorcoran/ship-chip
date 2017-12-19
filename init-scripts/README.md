@@ -1,6 +1,14 @@
 The server is managed by the systemctl service, the service is configured via [shipchip.service](shipchip.service), the system job will call [setSail.sh](setSail.sh) to start the 
 service (nodejs app)
 
+Requirements
+```
+apt-get install nodejs
+apt-get install npm
+ln -s /usr/bin/nodejs /usr/local/bin/node
+ln -s /usr/bin/npm /usr/local/bin/npm
+```
+
 The [pollGit.sh](pollGit.sh) script will be invoked via a cron job, this job will run periodically to manage changes on the device, the script will manage the server via the 
 upstart scripts
 
